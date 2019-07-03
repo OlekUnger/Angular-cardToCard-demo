@@ -12,7 +12,7 @@
             </div>
 
             <div class="card-number" formGroupName="customerCardNumber">
-              <div class="card-number-item" *ngFor="let number of form.get('customerCardNumber').controls; let i = index">
+              <div class="card-number-item" *ngFor="let number of form.get('customerCardNumber')['controls']; let i = index">
                 <input
                     type="text"
                     size="4"
@@ -98,7 +98,7 @@
             <label>номер</label>
           </div>
           <div class="card-number" formArrayName="consumerCardNumber">
-            <div class="card-number-item" *ngFor="let number of form.get('consumerCardNumber').controls; let i = index">
+            <div class="card-number-item" *ngFor="let number of form.get('consumerCardNumber')['controls']; let i = index">
               <input
                   type="text"
                   size="4"

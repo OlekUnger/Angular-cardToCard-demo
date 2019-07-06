@@ -54,7 +54,6 @@ export class CreateComponent implements OnInit {
 
     getField(field, ind = null) {
         if (this.forRepeat) {
-            console.log('transact', this.forRepeat);
 
             if (field === 'consumerCard' || field === 'customerCard') {
                 return this.forRepeat[field].split(' ')[ind];

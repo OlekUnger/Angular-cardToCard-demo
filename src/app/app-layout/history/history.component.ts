@@ -9,6 +9,7 @@ import {Router} from '@angular/router';
 })
 export class HistoryComponent implements OnInit {
     transactions: Transaction[] = [];
+    loading = true;
     @Output() repeat = new EventEmitter<Transaction>();
 
     constructor(private transactionService: TransactionService,
@@ -18,7 +19,12 @@ export class HistoryComponent implements OnInit {
 
     ngOnInit() {
         this.transactionService.getAll()
-            .then(data => this.transactions = data);
+            .then(data => {
+                if (data) {
+                    this.transactions = data;
+                    this.loading = false;
+                }
+            });
     }
 
     onRepeat(id: number) {
